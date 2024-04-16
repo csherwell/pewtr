@@ -398,9 +398,9 @@ file.delay=0;
 pewtr2.subj=subj;
 pewtr2.file=file;
 pewtr2.time=time;
-pewtr2.conditions=[];
-pewtr2.covar=[];
-pewtr2.bgfs=[];
+pewtr2.conditions=cell(1);
+pewtr2.covar=cell(1);
+pewtr2.bgfs=cell(1);
 
 %% Copy data if available
 if exist('EDA','var'), pewtr2.data.EDA=EDA; end

@@ -22,6 +22,11 @@ if numel(varargin)<1 %if no input arguments
     return
 end
 
+%replace NaNs with zero
+dinx=isnan(data);
+data(dinx)=0;
+
+
 if ~isempty(find(strcmpi(varargin,'SG'), 1))
     %%S-G filter
     inx=find(strcmpi(varargin,'SG'), 1);
@@ -57,3 +62,6 @@ if ~isempty(find(strcmpi(varargin,'butter'), 1))
    varargout{2}=varargin{inx+2};
     
 end
+
+%replace NaNs
+output(dinx)=NaN;
